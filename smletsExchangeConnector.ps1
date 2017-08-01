@@ -19,18 +19,18 @@ Requires: PowerShell 4+, SMlets, and Exchange Web Services API (already installe
     function. Navigate to that function to read more. If you don't make use of their HTML KB, you'll want to keep $searchCiresonHTMLKB = $false
 Misc: The Release Record functionality does not exist in this as no out of box (or 3rd party) Type Projection exists to serve this purpose.
     You would have to create your own Type Projection in order to leverage this.
-Version: 1.2b = created Send-EmailFromWorkflowAccount for future functions to leverage the SCSM workflow account defined therein
-                updated Search-CiresonKnowledgeBase to use Send-EmailFromWorkflowAccount
-                created $exchangeAuthenticationType so as to introduce Windows Authentication or Impersonation to bring to closer parity with stock EC connector
-                expanded email processing loop to prepare for things other than IPM.Note message class (i.e. Calendar appointments, custom message classes per org.)
-                created Schedule-WorkItem function to enable setting Scheduled Start/End Dates on Work Items based on the Calendar Start/End times.
-                    introduced configuration variable for this feature ($processCalendarAppointment)
-                created initial SCOM functionality/integrations to obtaining Health of a Distributed Application and other items
+Version: 1.3b = created initial SCOM functionality/integrations to obtaining Health of a Distributed Application and other items
                 created Get-SCOMAuthorizedRequester as a means to validate user requesting information from SCOM
                 created Get-SCOMDistributedAppHealth so as to request the health of a SCOM DA
                 created config variable for LoggingLevel
                     could just reference the same registry key for the native Exchange Connector
                     need to build what the levels of logging represent and create said functions
+1.2 = created Send-EmailFromWorkflowAccount for future functions to leverage the SCSM workflow account defined therein
+                updated Search-CiresonKnowledgeBase to use Send-EmailFromWorkflowAccount
+                created $exchangeAuthenticationType so as to introduce Windows Authentication or Impersonation to bring to closer parity with stock EC connector
+                expanded email processing loop to prepare for things other than IPM.Note message class (i.e. Calendar appointments, custom message classes per org.)
+                created Schedule-WorkItem function to enable setting Scheduled Start/End Dates on Work Items based on the Calendar Start/End times.
+                    introduced configuration variable for this feature ($processCalendarAppointment)
                 updated Attach-EmailToWorkItem so the Exchange Conversation ID is written into the Description as "ExchangeConversationID:$id;"
                 issue on Attach-EmailToWorkItem/Attach-FileToWorkItem where the "AttachedBy" relationship was using the wrong variable
                 created Verify-WorkItem to attempt to begin identifying potentially quickly responded messages/append them to
@@ -1127,7 +1127,7 @@ $exchangeService.AutodiscoverUrl($workflowEmailAddress)
 #define search parameters and search on the defined classes
 $inboxFolderName = [Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Inbox
 $inboxFolder = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($exchangeService,$inboxFolderName)
-$itemView = New-Object -TypeName Microsoft.Exchange.WebServices.Data.ItemView -ArgumentList 10
+$itemView = New-Object -TypeName Microsoft.Exchange.WebServices.Data.ItemView -ArgumentList 1000
 $propertySet = New-Object Microsoft.Exchange.WebServices.Data.PropertySet([Microsoft.Exchange.WebServices.Data.BasePropertySet]::FirstClassProperties)
 $propertySet.RequestedBodyType = [Microsoft.Exchange.WebServices.Data.BodyType]::Text
 $mimeContentSchema = New-Object Microsoft.Exchange.WebServices.Data.PropertySet([Microsoft.Exchange.WebServices.Data.ItemSchema]::MimeContent)
