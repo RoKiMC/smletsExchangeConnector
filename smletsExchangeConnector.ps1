@@ -8,7 +8,7 @@ out of box SCSM Exchange Connector as well as help enable new functionality arou
 Work Item scenarios, runbook automation, 3rd party customizations, and
 enabling other organizational level processes via email
 
-.NOTES
+.NOTES 
 Author: Adam Dzyacky
 Contributors: Martin Blomgren, Leigh Kilday
 Reviewers: Tom Hendricks, Brian Weist
@@ -19,13 +19,8 @@ Requires: PowerShell 4+, SMlets, and Exchange Web Services API (already installe
     function. Navigate to that function to read more. If you don't make use of their HTML KB, you'll want to keep $searchCiresonHTMLKB = $false
 Misc: The Release Record functionality does not exist in this as no out of box (or 3rd party) Type Projection exists to serve this purpose.
     You would have to create your own Type Projection in order to leverage this.
-Version: 1.3b = created initial SCOM functionality/integrations to obtaining Health of a Distributed Application and other items
-                created Get-SCOMAuthorizedRequester as a means to validate user requesting information from SCOM
-                created Get-SCOMDistributedAppHealth so as to request the health of a SCOM DA
-                created config variable for LoggingLevel
-                    could just reference the same registry key for the native Exchange Connector
-                    need to build what the levels of logging represent and create said functions
-1.2 = created Send-EmailFromWorkflowAccount for future functions to leverage the SCSM workflow account defined therein
+Version: 1.3b =
+Version: 1.2 = created Send-EmailFromWorkflowAccount for future functions to leverage the SCSM workflow account defined therein
                 updated Search-CiresonKnowledgeBase to use Send-EmailFromWorkflowAccount
                 created $exchangeAuthenticationType so as to introduce Windows Authentication or Impersonation to bring to closer parity with stock EC connector
                 expanded email processing loop to prepare for things other than IPM.Note message class (i.e. Calendar appointments, custom message classes per org.)
@@ -113,7 +108,7 @@ $ciresonPortalPassword = ""
 $enableSCOMIntegration = $false
 $scomMGMTServer = ""
 $approvedMemberTypeForSCOM = "group"
-$approvedADGroupForSCOM = "my custom AD SCOM group"
+$approvedADGroupForSCOM = "my custom AD SCOM Authorized Users group"
 $approvedUsersForSCOM = "myfirst.email@domain.com", "mysecond.address@domain.com"
 
 #define SCSM Work Item keywords to be used
@@ -135,7 +130,7 @@ $exchangeEWSAPIPath = "C:\Program Files\Microsoft\Exchange\Web Services\1.2\Micr
 #enable logging per standard Exchange Connector registry keys
 #valid options on that registry key are 1 to 7 where 7 is the most verbose
 #$loggingLevel = (Get-ItemProperty "HKLM:\Software\Microsoft\System Center Service Manager Exchange Connector" -ErrorAction SilentlyContinue).LoggingLevel
-$loggingLevel = 1
+#$loggingLevel = 1
 
 #endregion
 
