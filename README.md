@@ -9,6 +9,9 @@ The stock Exchange Connector is a seperate download for SCSM 2012+ that enables 
 This is aimed at SCSM administrators looking to further push the automation limits of what their SCSM deployment can do with inbound email processing. As such, you should be comfortable with PowerShell and navigating SCSM via SMlets.
 
 ## What new things can it do?
+Search Cireson Portal Service Catalog (v1.3)
+- In a similar vein of this connector's v1 "Search Cireson HTML Knowledge Base", this feature when enabled will email the Affected User suggested Request Offerings within the Affected User's permission scope based on the content of their email via the Cireson Web Portal API. This feature has been tested and confirmed working with v7.x and v8.x of their SCSM portal.
+
 Digitally Signed and Encrypted Emails (v1.3)
 - Leveraging the open source [MimeKit](https://github.com/jstedfast/MimeKit) project by Jeffrey Stedfast, the connector can now process digitally signed or encrypted emails just like regular mail. This requires an appropriate certificate in either the user's personal cert store or the local machine's personal cert store.
 
