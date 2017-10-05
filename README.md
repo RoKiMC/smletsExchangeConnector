@@ -10,7 +10,7 @@ This is aimed at SCSM administrators looking to further push the automation limi
 
 ## What new things can it do?
 Digitally Signed and Encrypted Emails (v1.3)
-- Leveraging [MimeKit](https://github.com/jstedfast/MimeKit) by Jeffrey Stedfast, the connector can now process digitally signed or encrypted emails just like regular mail. This requires an appropriate certificate in either the user's personal cert store or the local machine's personal cert store.
+- Leveraging the open source [MimeKit](https://github.com/jstedfast/MimeKit) project by Jeffrey Stedfast, the connector can now process digitally signed or encrypted emails just like regular mail. This requires an appropriate certificate in either the user's personal cert store or the local machine's personal cert store.
 
 System Center Operations Manager (SCOM) Integration (v1.3)
 - Using a configurable [keyword], authorized users (as defined individually or through an Active Directory group) can request the overall Health and Alert counts of a Distributed Application.
