@@ -9,12 +9,11 @@ The stock Exchange Connector is a seperate download for SCSM 2012+ that enables 
 This is aimed at SCSM administrators looking to further push the automation limits of what their SCSM deployment can do with inbound email processing. As such, you should be comfortable with PowerShell and navigating SCSM via SMlets.
 
 ## What new things can it do?
-*placeholder for new awesome feature (v1.3)*
-- explanation of new awesome feature
+Digitally Signed and Encrypted Emails (v1.3)
+- Leveraging [MimeKit](https://github.com/jstedfast/MimeKit) by Jeffrey Stedfast, the connector can now process digitally signed or encrypted emails just like regular mail. This requires an appropriate certificate in either the user's personal cert store or the local machine's personal cert store.
 
 System Center Operations Manager (SCOM) Integration (v1.3)
 - Using a configurable [keyword], authorized users (as defined individually or through an Active Directory group) can request the overall Health and Alert counts of a Distributed Application.
-
 
 Merge Replies from Related Users instead of Creating New Default Work Items (v1.2)
 - If a user emails the SCSM Workflow Account and also adds additional users to the To/CC lines those related users are automatically added to the Related Items tab of a New Work Item. However in these scenarios, it's possible that one of those users could reply within the same processing loop of the Exchange Connector. As a result, they will queue more emails to be turned into New Default Work Items. This feature aims to address the scenario by querying Exchange Inbox/Deleted Items for matching Conversation Topics and ConversationIDs, finding the original item in the thread, searching for the Work Item that already exists in SCSM, and then appending their Reply to its Action Log
