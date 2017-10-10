@@ -12,6 +12,9 @@ This is aimed at SCSM administrators looking to further push the automation limi
 Search Cireson Portal Service Catalog (v1.3)
 - In a similar vein of this connector's v1 "Search Cireson HTML Knowledge Base", this feature when enabled will email the Affected User suggested Request Offerings within the Affected User's permission scope based on the content of their email via the Cireson Web Portal API. This feature has been tested and confirmed working with v7.x and v8.x of their SCSM portal.
 
+Send Outlook Meeting (v1.3)
+- Building upon the previous version's "Schedule Work Item", this feature introduces a Cireson SCSM Portal Task that kicks open your local Outlook client to send meeting requests on Work Items to the Affected User and your workflow account (or just your workflow if no Affected User is present). In doing so, further rounding out the Schedule Work Item feature by setting Scheduled Start/End Dates when the connector processes Calendar items.
+
 Digitally Signed and Encrypted Emails (v1.3)
 - Leveraging the open source [MimeKit](https://github.com/jstedfast/MimeKit) project by Jeffrey Stedfast, the connector can now process digitally signed or encrypted emails just like regular mail. This requires an appropriate certificate in either the user's personal cert store or the local machine's personal cert store.
 
