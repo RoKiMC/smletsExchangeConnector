@@ -20,8 +20,8 @@ var date = new Date(),
     second = date.getSeconds().toString(),
     formattedSecond = (second.length === 1) ? ("0" + second) : second;
 var icsCreateDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
-var stateDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
-var endDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
+var stateDate = year + formattedMonth + formattedDay
+var endDate = year + formattedMonth + formattedDay
 
 //Send Outlook Meeting, Incident
 app.custom.formTasks.add('Incident', "Send Outlook Meeting", function (formObj, viewModel){ 
