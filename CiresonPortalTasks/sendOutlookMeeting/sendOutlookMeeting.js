@@ -6,10 +6,22 @@
 var scsmWFAccount = "account@domain.tld"
 var scsmWFAccountDisplayName = "Service Manager"
 
-//need to make these dynamic
-var stateDate = "20171031T050000Z"
-var endDate = "20171031T050000Z"
-var icsCreateDate = "20171031T050000Z"
+//generate dates for appoint start/end time and the created time of the ICS message
+var date = new Date(),
+    year = date.getFullYear(),
+    month = (date.getMonth() + 1).toString(),
+    formattedMonth = (month.length === 1) ? ("0" + month) : month,
+    day = date.getDate().toString(),
+    formattedDay = (day.length === 1) ? ("0" + day) : day,
+    hour = date.getHours().toString(),
+    formattedHour = (hour.length === 1) ? ("0" + hour) : hour,
+    minute = date.getMinutes().toString(),
+    formattedMinute = (minute.length === 1) ? ("0" + minute) : minute,
+    second = date.getSeconds().toString(),
+    formattedSecond = (second.length === 1) ? ("0" + second) : second;
+var icsCreateDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
+var stateDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
+var endDate = year + formattedMonth + formattedDay + 'T' + formattedHour + formattedMinute + formattedSecond
 
 //Send Outlook Meeting, Incident
 app.custom.formTasks.add('Incident', "Send Outlook Meeting", function (formObj, viewModel){ 
