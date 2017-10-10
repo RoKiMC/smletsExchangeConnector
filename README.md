@@ -1,6 +1,5 @@
-# SCSM Exchange Connector via SMlets
-This PowerShell script leverages the [SMlets module](https://www.powershellgallery.com/packages/smlets/0.5.0.1) to build an open  Exchange Connector for controlling Microsoft System Center Service Manager 2012+
-
+# SCSM Exchange Connector with native SCSMlets
+Based on the original smletsExchangeConnector this PowerShell script will provide the same functionality without the use of SMlets.
 
 ## So what is this for?
 The stock Exchange Connector is a seperate download  for SCSM 2012+ that enables SCSM deployments to leverage an Exchange mailbox to process updates to work items. While incredibly useful, some feel limited by the lack of customization given its nature as a sealed management pack. This PowerShell script replicates all functionality of [Exchange Connector 3.1](https://www.microsoft.com/en-ca/download/details.aspx?id=45291) introduces several new features, and enables SCSM Administrators to further customize the solution to their needs.
