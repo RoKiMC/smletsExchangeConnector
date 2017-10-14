@@ -1,0 +1,20 @@
+<#
+.SYNOPSIS
+based on the smletsExchangeConnector V 1.2 this PS Script provides SCSM Exchange Connector functionality through PowerShell with native SCSM lets
+
+.DESCRIPTION
+This PowerShell script/runbook aims to address shortcomings and wants in the
+out of box SCSM Exchange Connector as well as help enable new functionality around
+Work Item scenarios, runbook automation, 3rd party customizations, and
+enabling other organizational level processes via email
+
+.NOTES 
+Adjustments for native SCSM lets & some other small modifications: Roland Kind
+Original Author: Adam Dzyacky
+
+.Modifications to original V1.2
+* securestring password handling
+* SR/IR prefix handling based on Customer SCSM definitions
+* cleanup of some code for comment functions
+
+#>
