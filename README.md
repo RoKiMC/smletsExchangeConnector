@@ -1,4 +1,5 @@
-# please note - this is in progress !
+# please note - this is work in progress !
+## Version 0.8
 
 # SCSM Exchange Connector with native SCSMlets
 Based on the original smletsExchangeConnector this PowerShell script will provide the same functionality without the use of SMlets.
