@@ -61,7 +61,7 @@ import-Module 'C:\Program Files\Microsoft System Center\Service Manager\Powershe
 
 
 #region #### Configuration ####
-#define the an SCSM management server, this could be a remote name or localhost
+#define the SCSM management server, this could be a remote name or localhost
 $scsmMGMTServer = "<hostname>"
 
 #define SCSM EnterpriseManagementGroupConnection and EnterpriseManagementGroup Object
